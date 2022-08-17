@@ -1,0 +1,26 @@
+{
+  "name": "sova-caller-backend",
+  "description": "sova-caller-backend",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "sova.ai",
+      "gitHub": "https://github.com/sovaai"
+    }
+  ],
+  "scripts": {
+    "start": "nodemon --watch './**/*.go' --signal SIGTERM --exec 'go' run main.go",
+    "preview": "go run main.go",
+    "build": "go build -x -o build/caller_back",
+    "postinstall": "echo > node_modules/go.mod"
+  },
+  "keywords": [
+    "go",
+    "caller",
+    "caller-back"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
