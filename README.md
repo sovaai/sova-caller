@@ -2,18 +2,18 @@
 
 # SOVA Caller App
 
-## Разработка
+## Installation
 
-### Требования
+### Requirements
 
 - Go 1.18.3 (https://go.dev/doc/install)
 - Node v14.18 (https://nodejs.org/en/download/)
-- npm latest
-- PJSIP v.2.12 ([Загрузите PJSIP](https://www.pjsip.org/download.htm) и [Соберите и установите](https://trac.pjsip.org/repos/wiki/Getting-Started)). При необходимости установите отсутствующие библиотеки (libssl-dev, uuid-dev, libasound2-dev)
+- npm latest (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- PJSIP v.2.12 ([Download PJSIP](https://www.pjsip.org/download.htm) and [Install](https://trac.pjsip.org/repos/wiki/Getting-Started)). Install missing libraries if necessary (libssl-dev, uuid-dev, libasound2-dev)
 
-### Установка зависимостей
+### Installing dependencies
 
-Для установки зависимостей проекта в корневой директории sova-caller выполните команды:
+To install project dependencies in the sova-caller root directory, run the following commands:
 
 ```
 npm i
@@ -23,46 +23,46 @@ cd ./server
 npm i
 ```
 
-Для запуска проекта в режиме разработки в корневой директории выполните:
+To run the project in development mode in the root directory, run:
 
 ```
 npm run start
 ```
 
-Бекенд-часть поднимется локально на 4000 порту [http://localhost:4000](http://localhost:4000)
-UI-часть запустится и будет доступна в браузере по адресу [http://localhost:3000](http://localhost:3000)
+The backend part will launch locally on port 4000 [http://localhost:4000](http://localhost:4000)
+The UI part will be available in the browser at [http://localhost:3000](http://localhost:3000)
 
-## Сборка образа и запуск контейнера
+## Building the image and running the container
 
-### Требования
+### Requirements
 
-- Node v14.18
-- npm latest
-- Docker latest
+- Node v14.18 (https://nodejs.org/en/download/)
+- npm latest (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- Docker latest (https://www.docker.com/)
 
-В образе происходит сборка обоих частей проекта, он содержит необходимые зависимости (Go и PJSIP), поэтому для запуска приложения из контейнера достаточно выполнить только указанные ниже команды.
+The image builds both parts of the project, it contains the necessary dependencies (Go and PJSIP), so you only need to run the following commands to run the application from the container.
 
-Для установки зависимостей проекта в корневой директории выполните команды:
+To install project dependencies in the root directory, run the commands:
 
 ```
 npm i
 ```
 
-Для сборки образа из Dockerfile выполните:
+To build an image from a Dockerfile, run:
 
 ```
 docker build -f ./docker/Dockerfile -t sova-caller .
 ```
 
-Для запуска контейнера с присвоением ему имени my-sova-caller выполните:
+To start a container and give it a name my-sova-caller run the command:
 
 ```
 docker run --name my-sova-caller -p 4000:4000 sova-caller
 ```
 
-Приложение поднимается локально на 4000 порту [http://localhost:4000](http://localhost:4000)
+The application is raised locally on port 4000 [http://localhost:4000](http://localhost:4000)
 
-Для остановки и запуска контейнера можно выполнить следующие команды:
+You can run the following commands to stop and start a container:
 
 ```
 docker stop my-sova-caller
