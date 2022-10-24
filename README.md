@@ -68,3 +68,6 @@ You can run the following commands to stop and start a container:
 docker stop my-sova-caller
 docker start my-sova-caller
 ```
+## Licenses
+
+SOVA Caller is licensed under Apache License 2.0 by Virtual Assistant, LLC.
